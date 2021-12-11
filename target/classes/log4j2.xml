@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Properties>
+		<Property name="path">
+			C:/Users/kiril/OneDrive/Рабочий стол/Учеба/JavaWeb/project/out/artifacts/project
+		</Property>
+		<Property name="patternfull">
+			%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{5} - %msg%n
+		</Property>
+		<Property name="patternshort">
+			%d{HH:mm:ss.SSS} [%t] %-5level %logger{1} - %msg%n
+		</Property>
+	</Properties>
+	<Appenders>
+		<File name="TxtFile" fileName="${path}/logs/text.log" bufferedIO="true">
+			<PatternLayout pattern="${patternfull}" />
+		</File>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="${patternshort}" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Root level="debug">
+<!--			<AppenderRef ref="Console"/>-->
+			<AppenderRef ref="TxtFile"/>
+		</Root>
+	</Loggers>
+</Configuration>
